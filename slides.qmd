@@ -1,0 +1,49 @@
+---
+title: "Causal Inference: An Application on Pensioner Poverty"
+author: "Darwin Del Castillo"
+date: today
+date-format: "DD/MM/YYYY"
+format:
+    revealjs:
+        slide-number: true
+        embed-resources: true
+        scrollable: true
+        controls-layout: bottom-right
+        menu: true
+        toc: true
+        toc-depth: 1
+        fontsize: 20
+---
+
+## Hello, There
+
+This presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including:
+
+-   Presenting code and LaTeX equations
+-   Including computations in slide output
+-   Image, video, and iframe backgrounds
+-   Fancy transitions and animations
+-   Activating scroll view
+
+...and much more
+
+## Pretty Code {auto-animate="true"}
+::: {.columns}
+::: {.column width="50%"}
+-   Over 20 syntax highlighting themes available
+-   Default theme optimized for accessibility
+:::
+::: {.column width="50%"}
+```{.r style="font-size: 18pt"}
+# Define a server for the Shiny app
+function(input, output) {
+
+  # Fill in the spot we created for a plot
+  output$phonePlot <- renderPlot({
+    # Render a barplot
+  })
+}
+```
+:::
+:::
+

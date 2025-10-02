@@ -1,0 +1,35 @@
+# R files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Quarto files
+/.quarto/
+/_site/
+/_book/
+*_cache/
+*_files/
+
+# Output files
+*.html
+*.pdf
+*.docx
+*.pptx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*~
+*.swp
+*.swo
+
+# CLAUDE
+CLAUDE.md
