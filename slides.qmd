@@ -3,6 +3,9 @@ title: "Causal Inference: An Application on Pensioner Poverty"
 author: "Darwin Del Castillo"
 date: today
 date-format: "DD/MM/YYYY"
+output-file: slides.html
+bibliography: references.bib
+csl: vancouver.csl
 format:
     revealjs:
         slide-number: true
@@ -12,20 +15,25 @@ format:
         menu: true
         toc: true
         toc-depth: 1
-        fontsize: 20
+        fontsize: 16
+        css: custom.css
 ---
 
-## Hello, There
+## What is Poverty?
 
-This presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including:
+People experience poverty when their resources are not enough to meet their basic needs, such as food, shelter, clothing, and healthcare. \
+Poverty is a multidimensional concept that goes beyond income and includes social, economic, and psychological aspects.
 
--   Presenting code and LaTeX equations
--   Including computations in slide output
--   Image, video, and iframe backgrounds
--   Fancy transitions and animations
--   Activating scroll view
+:::{.callout-note title = "Definitions of poverty in the UK [@Francis-Devine2025]"}
+- **Relative low income:** People living in households with income below 60% of the median in that year.
+- **Absolute low income:** People living in households with income below 60% of the median in 2010/11, adjusted for inflation.
+:::
 
-...and much more
+## Conditions for Causal Inference on observational studies
+- **Consistency:** the values of treatment under comparison correspond to well-defined interventions
+- **Exchangeability:** the conditional probability of receiving every value of treatment depends only on measured covariates
+- **Positivity:** every subject has a non-zero probability of receiving every value of treatment
+
 
 ## Pretty Code {auto-animate="true"}
 ::: {.columns}
@@ -47,3 +55,6 @@ function(input, output) {
 :::
 :::
 
+## References
+::: {#refs}
+:::
