@@ -8,6 +8,8 @@ bibliography: references.bib
 csl: vancouver.csl
 format:
     revealjs:
+        theme: default
+        transition: fade
         slide-number: true
         embed-resources: true
         scrollable: true
@@ -21,39 +23,24 @@ format:
 
 ## What is Poverty?
 
-People experience poverty when their resources are not enough to meet their basic needs, such as food, shelter, clothing, and healthcare. \
-Poverty is a multidimensional concept that goes beyond income and includes social, economic, and psychological aspects.
+- People experience poverty when their resources are not enough to meet their basic needs, such as food, shelter, clothing, and healthcare.
+- It is estimated than as of 2025, ~1.7 million people are living in relative poverty in the UK (1 in 5 pensioners, 17%) [@CAB2025].
 
 :::{.callout-note title = "Definitions of poverty in the UK [@Francis-Devine2025]"}
 - **Relative low income:** People living in households with income below 60% of the median in that year.
 - **Absolute low income:** People living in households with income below 60% of the median in 2010/11, adjusted for inflation.
 :::
 
-## Conditions for Causal Inference on observational studies
-- **Consistency:** the values of treatment under comparison correspond to well-defined interventions
-- **Exchangeability:** the conditional probability of receiving every value of treatment depends only on measured covariates
-- **Positivity:** every subject has a non-zero probability of receiving every value of treatment
+:::{.callout-important title = "How we measure poverty?"}
+  Poverty is a multidimensional concept that goes beyond income and includes social, economic, and psychological aspects.
+:::
+
+## Conditions for causal inference on observational studies [@hernan2025]
+- **Consistency:** the values of treatment under comparison correspond to well-defined interventions.
+- **Exchangeability:** the conditional probability of receiving every value of treatment depends only on measured covariates.
+- **Positivity:** every subject has a non-zero probability of receiving every value of treatment.
 
 
-## Pretty Code {auto-animate="true"}
-::: {.columns}
-::: {.column width="50%"}
--   Over 20 syntax highlighting themes available
--   Default theme optimized for accessibility
-:::
-::: {.column width="50%"}
-```{.r style="font-size: 18pt"}
-# Define a server for the Shiny app
-function(input, output) {
-
-  # Fill in the spot we created for a plot
-  output$phonePlot <- renderPlot({
-    # Render a barplot
-  })
-}
-```
-:::
-:::
 
 ## References
 ::: {#refs}
