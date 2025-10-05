@@ -1,3 +1,29 @@
 .reveal {
   font-size: 1.75em;
 }
+
+/* Center title slide */
+.reveal section:first-child {
+  text-align: center;
+}
+
+/* Justify text for content slides only */
+.reveal section:not(:first-child) p,
+.reveal section:not(:first-child) li {
+  text-align: justify;
+}
+
+/* Keep content slide headings left-aligned */
+.reveal section:not(:first-child) h1,
+.reveal section:not(:first-child) h2,
+.reveal section:not(:first-child) h3,
+.reveal section:not(:first-child) h4 {
+  text-align: left;
+}
+
+/* Left-align references */
+.reveal #refs,
+.reveal #refs p,
+.reveal #refs div {
+  text-align: justify !important;
+}
