@@ -5,7 +5,7 @@ date: today
 date-format: "DD/MM/YYYY"
 output-file: slides.html
 bibliography: references.bib
-csl: vancouver.csl
+csl: vancouver-superscript.csl
 format:
     revealjs:
         theme: default
@@ -21,7 +21,7 @@ format:
         css: custom.css
 ---
 
-## What is Poverty?
+## What is poverty?
 
 - People experience poverty when their resources are not enough to meet their basic needs, such as food, shelter, clothing, and healthcare.
 - It is estimated than as of 2025, ~1.7 million people are living in relative poverty in the UK (1 in 5 pensioners, 17%) [@CAB2025].
@@ -34,6 +34,15 @@ format:
 :::{.callout-important title = "How we measure poverty?"}
   Poverty is a multidimensional concept that goes beyond income and includes social, economic, and psychological aspects.
 :::
+
+## The problem
+How to estimate the causal effect of interventions on pensioner poverty over health outcomes?
+
+### Why is this a problem?
+- Socioeconomic conditions have been shown to be strong predictors of health outcomes [@Marmot2005-kx].
+- There is evidence that income has an impact on health outcomes [@Gunasekara2011-fi; @Cooper2021-xh].
+- However, much of the variables while ascertaining this problem are time-varying affected by prior exposures.
+- Another problem is the reliance on administrative data, which may not capture all relevant confounders.
 
 ## Conditions for causal inference on observational studies [@hernan2025]
 - **Consistency:** the values of treatment under comparison correspond to well-defined interventions.
