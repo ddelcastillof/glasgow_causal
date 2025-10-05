@@ -35,12 +35,19 @@ format:
   Poverty is a multidimensional concept that goes beyond income and includes social, economic, and psychological aspects.
 :::
 
+## Why study pensioner health? {.center-content}
+
+Older population is increasing worldwide along with associated burden of disease, particularly NCDs [@GBD-2021-Diseases-and-Injuries-Collaborators2024-sc].
+
+![Burden of disease in older adults in UK [@Chen2025-vs]](images/Chen2025.png){width=50%}
+
 ## The problem
 How to estimate the causal effect of pensioner poverty on health outcomes?
 
-### Why is this a problem?
+### Why measure it?
 - Socioeconomic conditions have been shown to be strong predictors of health outcomes [@Marmot2005-kx].
 - There is evidence that income has an impact on health outcomes [@Gunasekara2011-fi; @Cooper2021-xh].
+- These estimates could be used to estimate the impact of social policies on health outcomes through simulations.
 
 ## Conditions for causal inference on observational studies [@hernan2025]
 - **Consistency:** the values of treatment under comparison correspond to well-defined interventions.
@@ -54,10 +61,11 @@ How to estimate the causal effect of pensioner poverty on health outcomes?
 - **Administrative data:** Reliance on administrative data may not capture all relevant confounders.
 - **Definition of income [@Shi2021-ow]:** High heterogeneity in the definition of income (e.g., individual versus household level).
 - **Definition of the causal contrast [@Igelstrom2022-vw]:** What we are comparing, i.e. which point of time? what measure of change?.
+- **SUTVA:** One household member's poverty status may affect other members' health outcomes.
 :::
 ::: {.column width="50%"}
 ::: {style="text-align: center;"}
-![Different definitions of income[@Igelstrom2024-by]](images/Igelstrom-Fig1A.png){height=80%}
+![Different definitions of income[@Igelstrom2024-by]](images/Igelstrom-Fig1A.png)
 :::
 :::
 :::
