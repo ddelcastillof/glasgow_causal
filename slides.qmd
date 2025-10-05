@@ -49,7 +49,7 @@ How to estimate the causal effect of interventions on pensioner poverty over hea
 - **Exchangeability:** the conditional probability of receiving every value of treatment depends only on measured covariates.
 - **Positivity:** every subject has a non-zero probability of receiving every value of treatment.
 
-
+## 
 
 ## References
 ::: {#refs}
