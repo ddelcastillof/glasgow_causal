@@ -36,20 +36,36 @@ format:
 :::
 
 ## The problem
-How to estimate the causal effect of interventions on pensioner poverty over health outcomes?
+How to estimate the causal effect of pensioner poverty on health outcomes?
 
 ### Why is this a problem?
 - Socioeconomic conditions have been shown to be strong predictors of health outcomes [@Marmot2005-kx].
 - There is evidence that income has an impact on health outcomes [@Gunasekara2011-fi; @Cooper2021-xh].
-- However, much of the variables while ascertaining this problem are time-varying affected by prior exposures.
-- Another problem is the reliance on administrative data, which may not capture all relevant confounders.
 
 ## Conditions for causal inference on observational studies [@hernan2025]
 - **Consistency:** the values of treatment under comparison correspond to well-defined interventions.
 - **Exchangeability:** the conditional probability of receiving every value of treatment depends only on measured covariates.
 - **Positivity:** every subject has a non-zero probability of receiving every value of treatment.
 
+## Challenges
+:::{.columns}
+::: {.column width="50%"}
+- **Confounding:** Many variables are time-varying and affected by prior exposures.
+- **Administrative data:** Reliance on administrative data may not capture all relevant confounders.
+- **Definition of income [@Shi2021-ow]:** High heterogeneity in the definition of income (e.g., individual versus household level).
+- **Definition of the causal contrast [@Igelstrom2022-vw]:** What we are comparing, i.e. which point of time? what measure of change?.
+:::
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+![Different definitions of income[@Igelstrom2024-by]](images/Igelstrom-Fig1A.png){height=80%}
+:::
+:::
+:::
 
+## Potential methods for handling these challenges
+- **Marginal Structural Models (MSMs):** Use inverse probability weighting to create a pseudo-population where the treatment is independent of measured confounders.
+- **Doubly Robust Estimation:** Combines outcome regression and propensity score weighting to provide consistent estimates if either model is correctly specified.
+- **G-computation:** A method that involves modeling the outcome as a function of treatment and confounders, then averaging over the distribution of confounders.
 
 ## References
 ::: {#refs}
