@@ -1,0 +1,116 @@
+/*-- scss:defaults --*/
+
+// Primary accent colors
+$primary-color: #006994;
+$secondary-color: #4a9cc9;
+$accent-color: #7ebcd6;
+
+// Fonts
+$presentation-font-size-root: 36px;
+$presentation-heading-font: "Arial";
+$presentation-font: "Arial";
+
+/*-- scss:rules --*/
+
+// Main slide styling
+.reveal {
+  font-family: $presentation-font;
+}
+
+// Headings
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-weight: 600;
+  text-transform: none;
+  margin-bottom: 0.5em;
+}
+
+.reveal h1 {
+  font-size: 1.8em;
+  border-bottom: 3px solid $primary-color;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.6em;
+}
+
+.reveal h2 {
+  font-size: 1.4em;
+  border-bottom: 2px solid $secondary-color;
+  padding-bottom: 0.2em;
+  margin-top: 0.5em;
+}
+
+.reveal h3 {
+  font-size: 1.2em;
+  color: $secondary-color;
+}
+
+// Title slide
+.reveal .title-slide {
+  text-align: left;
+}
+
+.reveal .title-slide h1 {
+  color: $primary-color;
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+}
+
+.reveal .title-slide .author,
+.reveal .title-slide .date {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 0.3em;
+}
+
+// Callout boxes (Quarto-specific)
+.reveal .callout {
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+  border-left: 4px solid;
+}
+
+.reveal .callout-note {
+  background-color: #e8f4f8;
+  border-left-color: #3498db;
+}
+
+.reveal .callout-important {
+  background-color: #fef5e7;
+  border-left-color: #f39c12;
+}
+
+.reveal .callout-warning {
+  background-color: #fef0f0;
+  border-left-color: #e74c3c;
+}
+
+.reveal .callout-tip {
+  background-color: #e8f8f5;
+  border-left-color: #2ecc71;
+}
+
+.reveal .callout-title {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  color: inherit;
+}
+
+// Center content utility
+.reveal .center-content {
+  text-align: center;
+}
+
+// Columns
+.reveal .columns {
+  display: flex;
+  gap: 2em;
+}
+
+.reveal .column {
+  flex: 1;
+}
