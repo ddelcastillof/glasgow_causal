@@ -13,10 +13,7 @@
 *_files/
 
 # Output files
-*.html
 *.pdf
-*.docx
-*.pptx
 
 # OS files
 .DS_Store
