@@ -1,5 +1,5 @@
 .reveal {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 /* Center title slide */
@@ -17,6 +17,21 @@
 .reveal .center-content p,
 .reveal .center-content img {
   text-align: center !important;
+}
+
+/* Center images in columns */
+.reveal .column figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.reveal .column figure img {
+  margin: 0 auto;
+  display: block;
 }
 
 /* Keep content slide headings left-aligned */
