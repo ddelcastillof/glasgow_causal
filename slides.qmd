@@ -69,7 +69,7 @@ $$\Pr[A = a | L = l] > 0 \; \forall l : \Pr[L = l] \neq 0$$
 ::: {.column width="50%"}
 - **Confounding:** Many variables are time-varying and affected by prior exposures.
 - **Administrative data:** Reliance on only administrative data may not capture all relevant confounders.
-- **Definition of income [@Shi2021-ow]:** High heterogeneity in the definition of income (e.g., individual versus household level).
+- **Definition of income [@Shi2021-ow]:** High heterogeneity in the definition of income (e.g. individual versus household level).
 - **Definition of the causal contrast [@Igelstrom2022-vw]:** What we are comparing, i.e. which point of time? what measure of change?.
 - **SUTVA:** One household member's poverty status may affect other members' health outcomes.
 - **Reverse causation:** Poor health may lead to poverty due to increased medical expenses or reduced earning capacity.
@@ -140,28 +140,28 @@ print(p)
 ## Potential methods for handling these challenges
 
 ### **Marginal Structural Models (MSMs):**
-- Well-established in epidemiology
-- Appropiate for simpler treatment regimes (e.g. binary treatment)
-- Unstable weights with strong confounding
+- Models the causal parameter (treatment) directly
+- Appropriate for time-varying exposures with treatment-confounder feedback
+- Susceptible to extreme weights and wide confidence intervals
 
-### **G-computation:**
-- Flexible for complex regimes (e.g., continuous treatments) and interaction modeling
-- Appropiate for simpler outcomes (e.g., binary outcome)
+### **g-estimation of SNMs:**
+- Fits a structural nested model to estimate treatment effect over levels of covariates $L$
+- Can model time-varying effect modification[@Robins2007-en]
 - Computationally intensive and requires correct model specification
 
 ### **Doubly Robust Estimation:**
-- Protection against misspecification
 - Combines strengths of both approaches
+- Protection against misspecification
 - More complex implementation
 
 ## An ideal approach
 1. Define the research question and causal contrast clearly.
 2. Define my estimand[@Lundberg2021-az]: average treatment effect (ATE), heterogeneous treatment effect (HTE), etc. 
 3. Identify and measure as many relevant confounders as possible.
-4. Choose an appropriate method (e.g., MSMs, doubly robust estimation, or G-computation) based on the definition of income.
+4. Choose an appropriate method (e.g. MSMs, doubly robust estimation, SNMs) based on the definition of income.
 5. Link administrative data with EHR data to capture health outcomes.
 6. Conduct sensitivity analyses to assess the robustness of findings: comparing two model specifications.
-7. Exploring exogenous sources of variablity (e.g., policy changes, governmental transfers, changes in age of retirement).
+7. Exploring exogenous sources of variability (e.g. policy changes, governmental transfers, changes in age of retirement).
 
 ## References
 ::: {#refs}
