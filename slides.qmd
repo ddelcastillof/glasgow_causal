@@ -3,6 +3,7 @@ title: "Causal Inference: An Application on Pensioner Poverty"
 author: "Darwin Del Castillo"
 date: today
 date-format: "DD/MM/YYYY"
+footer: "Presentation for the MRC/CSO Social and Public Health Sciences Unit, University of Glasgow"
 output-file: slides.html
 bibliography: references.bib
 csl: vancouver-superscript.csl
@@ -16,7 +17,7 @@ format:
         scrollable: true
         controls-layout: bottom-right
         menu: true
-        toc: true
+        toc: false
         toc-depth: 1
         fontsize: 16
         css: custom.css
@@ -67,7 +68,7 @@ $$\Pr[A = a | L = l] > 0 \; \forall l : \Pr[L = l] \neq 0$$
 :::{.columns}
 ::: {.column width="50%"}
 - **Confounding:** Many variables are time-varying and affected by prior exposures.
-- **Administrative data:** Reliance on administrative data may not capture all relevant confounders.
+- **Administrative data:** Reliance on only administrative data may not capture all relevant confounders.
 - **Definition of income [@Shi2021-ow]:** High heterogeneity in the definition of income (e.g., individual versus household level).
 - **Definition of the causal contrast [@Igelstrom2022-vw]:** What we are comparing, i.e. which point of time? what measure of change?.
 - **SUTVA:** One household member's poverty status may affect other members' health outcomes.
@@ -160,6 +161,7 @@ print(p)
 4. Choose an appropriate method (e.g., MSMs, doubly robust estimation, or G-computation) based on the definition of income.
 5. Link administrative data with EHR data to capture health outcomes.
 6. Conduct sensitivity analyses to assess the robustness of findings: comparing two model specifications.
+7. Exploring exogenous sources of variablity (e.g., policy changes, governmental transfers, changes in age of retirement).
 
 ## References
 ::: {#refs}
