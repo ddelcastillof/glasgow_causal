@@ -13,6 +13,17 @@
   text-align: justify;
 }
 
+/* Fix list item spacing */
+.reveal ol,
+.reveal ul {
+  margin-left: 1em;
+}
+
+.reveal ol li,
+.reveal ul li {
+  margin-left: 0.5em;
+}
+
 /* Center content for slides with .center-content class */
 .reveal .center-content p,
 .reveal .center-content img {
@@ -42,7 +53,7 @@
   text-align: left;
 }
 
-/* Left-align references */
+/* Justify references */
 .reveal #refs,
 .reveal #refs p,
 .reveal #refs div {
