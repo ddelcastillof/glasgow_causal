@@ -1,7 +1,7 @@
 ---
 title: "Causal Inference: An Application on Pensioner Poverty"
 author: "Darwin Del Castillo"
-date: today
+date: "10/07/2025"
 date-format: "DD/MM/YYYY"
 footer: "Presentation for the MRC/CSO Social and Public Health Sciences Unit, University of Glasgow"
 output-file: slides.html
