@@ -9,7 +9,7 @@ csl: vancouver-superscript.csl
 lang: en-GB
 format:
     revealjs:
-        theme: [default, malmoe.scss]
+        theme: [default, theme.scss]
         transition: fade
         slide-number: true
         embed-resources: true
