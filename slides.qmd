@@ -6,9 +6,10 @@ date-format: "DD/MM/YYYY"
 output-file: slides.html
 bibliography: references.bib
 csl: vancouver-superscript.csl
+lang: en-GB
 format:
     revealjs:
-        theme: default
+        theme: [default, malmoe.scss]
         transition: fade
         slide-number: true
         embed-resources: true
@@ -39,7 +40,7 @@ format:
 
 Older population is increasing worldwide along with associated burden of disease, particularly NCDs [@GBD-2021-Diseases-and-Injuries-Collaborators2024-sc].
 
-![Burden of disease in older adults in UK [@Chen2025-vs]](images/Chen2025.png){width=50%}
+![**Burden of disease in older adults in UK [@Chen2025-vs]**](images/Chen2025.png){width=50%}
 
 ## The problem
 How to estimate the causal effect of pensioner poverty on health outcomes?
@@ -51,8 +52,16 @@ How to estimate the causal effect of pensioner poverty on health outcomes?
 
 ## Conditions for causal inference on observational studies [@hernan2025]
 - **Consistency:** the values of treatment under comparison correspond to well-defined interventions.
+
+$$A_i = a \Rightarrow Y_i^a = Y_i^A = Y_i$$
+
 - **Exchangeability:** the conditional probability of receiving every value of treatment depends only on measured covariates.
+
+$$Y^a \perp\!\!\!\perp A \; \forall a$$
+
 - **Positivity:** every subject has a non-zero probability of receiving every value of treatment.
+
+$$\Pr[A = a | L = l] > 0 \; \forall l : \Pr[L = l] \neq 0$$
 
 ## Challenges
 :::{.columns}
@@ -62,18 +71,95 @@ How to estimate the causal effect of pensioner poverty on health outcomes?
 - **Definition of income [@Shi2021-ow]:** High heterogeneity in the definition of income (e.g., individual versus household level).
 - **Definition of the causal contrast [@Igelstrom2022-vw]:** What we are comparing, i.e. which point of time? what measure of change?.
 - **SUTVA:** One household member's poverty status may affect other members' health outcomes.
+- **Reverse causation:** Poor health may lead to poverty due to increased medical expenses or reduced earning capacity.
+- **Treatment confounder feedback**
 :::
 ::: {.column width="50%"}
-::: {style="text-align: center;"}
-![Different definitions of income[@Igelstrom2024-by]](images/Igelstrom-Fig1A.png)
-:::
+![**Different definitions of income[@Igelstrom2024-by]**](images/Igelstrom-Fig1A.png)
 :::
 :::
 
+## Treatment confounder feedback {.center-content}
+Poverty and employment status may influence each other over time.
+```{r}
+#| name: tcf_dag
+#| include: true
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: true
+#| results: asis
+
+# Packages
+pacman::p_load(ggdag, ggplot2, tidyverse)
+
+# Define the DAG structure
+dag <- dagify(
+  # Time 1 relationships
+  H1 ~ P0 + E0,
+  E1 ~ P0 + E0,
+  P1 ~ P0 + E0,
+
+  # Time 2 relationships
+  H2 ~ P1 + E1 + P0 + H1 + E2,
+  E2 ~ P1 + E1,
+
+  # Labels
+  labels = c(
+    "P0" = "Poverty T0",
+    "E0" = "Employment T0",
+    "P1" = "Poverty T1",
+    "E1" = "Employment T1",
+    "H1" = "Health T1",
+    "H2" = "Health T2",
+    "E2" = "Employment T2"
+    ),
+
+# Coordinates for layout
+  coords = list(
+    x = c(P0 = 1, E0 = 1, P1 = 2, E1 = 2, H1 = 2, H2 = 3, E2 = 3),
+    y = c(P0 = 2, E0 = 3, P1 = 2, E1 = 3, H1 = 1, H2 = 1, E2 = 2)
+  ),
+
+  exposure = "P1",
+  outcome = "H2"
+)
+
+# Create the plot
+p <- ggdag_status(dag, text = FALSE, node_size = 14, stylized = FALSE) +
+  geom_dag_point(aes(fill = status), size = 14, stroke = 1.5, shape = 21, color = "black") +
+  geom_dag_label_repel(aes(label = label), fill = "white", color = "black", size = 3.5) +
+  scale_fill_manual(values = c("exposure" = "#9ACD32", "outcome" = "#00CED1"), na.value = "white") +
+  theme_dag_blank() +
+  theme(legend.position = "none")
+
+print(p)
+```
+
 ## Potential methods for handling these challenges
-- **Marginal Structural Models (MSMs):** Use inverse probability weighting to create a pseudo-population where the treatment is independent of measured confounders.
-- **Doubly Robust Estimation:** Combines outcome regression and propensity score weighting to provide consistent estimates if either model is correctly specified.
-- **G-computation:** A method that involves modeling the outcome as a function of treatment and confounders, then averaging over the distribution of confounders.
+
+### **Marginal Structural Models (MSMs):**
+- Well-established in epidemiology
+- Appropiate for simpler treatment regimes (e.g. binary treatment)
+- Unstable weights with strong confounding
+
+### **G-computation:**
+- Flexible for complex regimes (e.g., continuous treatments) and interaction modeling
+- Appropiate for simpler outcomes (e.g., binary outcome)
+- Computationally intensive and requires correct model specification
+
+### **Doubly Robust Estimation:**
+- Protection against misspecification
+- Combines strengths of both approaches
+- More complex implementation
+
+## An ideal approach
+1. Define the research question and causal contrast clearly.
+2. Define my estimand[@Lundberg2021-az]: average treatment effect (ATE), heterogeneous treatment effect (HTE), etc. 
+3. Identify and measure as many relevant confounders as possible.
+4. Choose an appropriate method (e.g., MSMs, doubly robust estimation, or G-computation) based on the definition of income.
+5. Link administrative data with EHR data to capture health outcomes.
+6. Conduct sensitivity analyses to assess the robustness of findings: comparing two model specifications.
 
 ## References
 ::: {#refs}
