@@ -49,7 +49,7 @@ How to estimate the causal effect of pensioner poverty on health outcomes?
 ### Why measure it?
 - Socioeconomic conditions have been shown to be strong predictors of health outcomes [@Marmot2005-kx].
 - There is evidence that income has an impact on health outcomes [@Gunasekara2011-fi; @Cooper2021-xh].
-- These estimates could be used to estimate the impact of social policies on health outcomes through simulations.
+- These estimates could be used to model the impact of social policies on health outcomes through simulations.
 
 ## Conditions for causal inference on observational studies [@hernan2025]
 - **Consistency:** the values of treatment under comparison correspond to well-defined interventions.
