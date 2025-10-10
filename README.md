@@ -46,6 +46,7 @@ To work with this presentation, you need:
 - [Quarto](https://quarto.org/) (latest version)
 - R (for executing embedded R code)
 - Required R packages: `ggdag`, `ggplot2`, `tidyverse`, `pacman`
+- Decktape for exporting html slides to pdf
 
 ## Building the Presentation
 
@@ -68,7 +69,7 @@ This opens a browser window with live reload on file changes.
 ### Export to PDF
 
 ```bash
-quarto render slides.qmd --to pdf
+decktape reveal slides.html slides.pdf
 ```
 
 ## Presentation Features
@@ -94,6 +95,7 @@ quarto render slides.qmd --to pdf
 ## References
 
 Key references include:
+
 - Hernán MA, Robins JM. Causal Inference: What If (2025)
 - Igelström et al. (2024) on income definitions in health research
 - Marmot (2005) on social determinants of health
