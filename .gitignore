@@ -33,8 +33,7 @@ Thumbs.db
 CLAUDE.md
 
 # Images
-images/
+figs/
 
-# Slide files
-slides_files/
-slides_files 2/
+# Custom files
+custom_files/
