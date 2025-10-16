@@ -59,19 +59,3 @@
 .reveal #refs div {
   text-align: justify !important;
 }
-
-/* Add University of Glasgow logo to bottom-left corner except in the first slide */
-/* .reveal section:not(:first-child)::before {
-  content: "";
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 120px;
-  height: auto;
-  background-image: url("custom_files/UoG_colour.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  padding-bottom: 40px; /* Adjust based on logo aspect ratio
-  z-index: 1;
-} */

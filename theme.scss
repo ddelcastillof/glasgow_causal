@@ -118,3 +118,19 @@ $presentation-font: "Arial";
 .reveal .column {
   flex: 1;
 }
+
+// University of Glasgow logo - bottom-left corner (excluding title slide)
+// .reveal section:not(:first-child)::before {
+//   content: "";
+//   position: absolute;
+//   bottom: 20px;
+//   right: 20px;
+//   width: 120px;
+//   height: auto;
+//   background-image: url("custom_files/UoG_colour.png");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: right bottom;
+//   padding-bottom: 40px;
+//   z-index: 1;
+// }
