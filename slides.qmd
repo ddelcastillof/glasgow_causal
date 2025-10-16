@@ -28,12 +28,12 @@ format:
 - People experience poverty when their resources are not enough to meet their basic needs, such as food, shelter, clothing, and healthcare.
 - It is estimated than as of 2025, ~1.7 million people are living in relative poverty in the UK (1 in 5 pensioners, 17%) [@CAB2025].
 
-:::{.callout-note title = "Definitions of poverty in the UK [@Francis-Devine2025]"}
+:::{.callout-important title = "Definitions of poverty in the UK [@Francis-Devine2025]"}
 - **Relative low income:** People living in households with income below 60% of the median in that year.
 - **Absolute low income:** People living in households with income below 60% of the median in 2010/11, adjusted for inflation.
 :::
 
-:::{.callout-important title = "How we measure poverty?"}
+:::{.callout-warning title = "How we measure poverty?"}
   Poverty is a multidimensional concept that goes beyond income and includes social, economic, and psychological aspects.
 :::
 
@@ -41,7 +41,7 @@ format:
 
 Older population is increasing worldwide along with associated burden of disease, particularly NCDs [@GBD-2021-Diseases-and-Injuries-Collaborators2024-sc].
 
-![**Burden of disease in older adults in UK [@Chen2025-vs]**](images/Chen2025.png){width=50%}
+![**Burden of disease in older adults in UK [@Chen2025-vs]**](figs/Chen2025.png){width=50%}
 
 ## The problem
 How to estimate the causal effect of pensioner poverty on health outcomes?
@@ -76,7 +76,7 @@ $$\Pr[A = a | L = l] > 0 \; \forall l : \Pr[L = l] \neq 0$$
 - **Treatment confounder feedback**
 :::
 ::: {.column width="50%"}
-![**Different definitions of income[@Igelstrom2024-by]**](images/Igelstrom-Fig1A.png)
+![**Different definitions of income[@Igelstrom2024-by]**](figs/Igelstrom-Fig1A.png)
 :::
 :::
 
